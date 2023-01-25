@@ -1,7 +1,7 @@
 #include <iostream>
 #include <exception>
 
-#include "../task2/Source/smart_array/smart_array.h"
+#include "../Source/smart_array/smart_array.h"
 #include "../UserException/source/bad_array_length.h"
 
 
