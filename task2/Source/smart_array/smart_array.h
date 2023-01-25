@@ -14,6 +14,8 @@ public:
 	int get_size();
 	int get_capacity();
 
+	void operator = (const smart_array& other);
+
 private:
 	int* array;
 
@@ -22,7 +24,7 @@ private:
 	int reserve_node = 2;
 
 	unsigned int counter_added_elements;
-	static int number_smart_arrays;
 
 	bool is_zero_size();
+
 };

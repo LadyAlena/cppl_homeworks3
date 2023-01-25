@@ -5,7 +5,6 @@
 #include <iostream>
 #include <stdexcept>
 
-
 smart_array::smart_array(const int& size_) {
 
 	if (size_ < 0) throw bad_array_length();
@@ -16,11 +15,10 @@ smart_array::smart_array(const int& size_) {
 	array = new int[capacity] {};
 
 	counter_added_elements = 0;
-	number_smart_arrays++;
 }
 
 smart_array::~smart_array() {
-	if (number_smart_arrays == 1) delete[] array;
+	delete[] array;
 }
 
 void smart_array::print() {
@@ -74,6 +72,20 @@ int smart_array::get_size() { return size; }
 
 int smart_array::get_capacity() { return capacity; }
 
-bool smart_array::is_zero_size() { return bool(size); }
+void smart_array::operator=(const smart_array& other) {
 
-int smart_array::number_smart_arrays = 0;
+	delete[] array;
+
+	size = other.size;
+	capacity = other.capacity;
+	counter_added_elements = other.counter_added_elements;
+
+	array = new int[size];
+
+	for (int i = 0; i < size; ++i) {
+		array[i] = other.array[i];
+	}
+
+}
+
+bool smart_array::is_zero_size() { return bool(size); }

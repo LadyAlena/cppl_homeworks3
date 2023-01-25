@@ -4,19 +4,21 @@
 #include "../Source/smart_array/smart_array.h"
 #include "../UserException/source/bad_array_length.h"
 
+// подкорректировать деструктор
+
 
 int main(int argc, char** argv) {
 
 	try {
 
-		smart_array arr(5);
+		smart_array arr(2);
 		arr.add_element(1);
 		arr.add_element(4);
 		arr.add_element(155);
 
 		arr.print();
 
-		smart_array new_array(2);
+		smart_array new_array(0);
 		new_array.add_element(44);
 		new_array.add_element(34);
 
