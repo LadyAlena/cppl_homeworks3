@@ -4,8 +4,6 @@
 #include "../Source/smart_array/smart_array.h"
 #include "../UserException/source/bad_array_length.h"
 
-// подкорректировать деструктор
-
 
 int main(int argc, char** argv) {
 
