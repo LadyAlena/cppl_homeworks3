@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
 
 	try {
 
-		smart_array arr(7);
+		smart_array arr(4);
 
 		arr.add_element(1);
 		arr.add_element(4);
@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 		arr.add_element(14);
 		arr.add_element(15);
 
-		std::cout << arr.get_element(0) << std::endl;
+		std::cout << arr.get_element(2) << std::endl;
 		arr.print();
 
 	}
