@@ -24,6 +24,9 @@ int main(int argc, char** argv) {
 
 		arr = new_array;
 
+		arr.print();
+		new_array.print();
+
 	}
 	catch (std::out_of_range& ex) {
 		std::cout << ex.what() << std::endl;

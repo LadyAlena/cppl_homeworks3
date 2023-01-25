@@ -19,6 +19,7 @@ public:
 
 private:
 	int* array;
+
 	int size;
 	int capacity;
 	int reserve_node = 2;

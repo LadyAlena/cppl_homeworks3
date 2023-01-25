@@ -11,6 +11,7 @@ smart_array::smart_array(const int& size_) {
 
 	this->size = size_;
 	capacity = size + reserve_node;
+
 	array = new int[capacity]{};
 
 	counter_added_elements = 0;
@@ -56,12 +57,13 @@ void smart_array::add_element(const int& element) {
 	}
 
 	counter_added_elements++;
-
 }
 
 int& smart_array::get_element(int index) {
 
-	if (index < 0 || index > size - 1) { throw std::out_of_range("Attempt to access an element outside the container"); }
+	if (index < 0 || index > size - 1) { 
+		throw std::out_of_range("Attempt to access an element outside the container"); 
+	}
 
 	return  array[index];
 }
