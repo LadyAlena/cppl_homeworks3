@@ -27,27 +27,27 @@ void smart_array::print() {
 
 void smart_array::add_element(const int& element) {
 
-		size++;
+	size++;
 
-		if (capacity >= size) {
-			array[size - 1] = element;
+	if (capacity >= size) {
+		array[size - 1] = element;
+	}
+	else {
+		capacity = size + reserve_node;
+
+		int* array_temp = new int[capacity]{};
+
+		for (int i = 0; i < size && capacity > size; ++i) {
+			if (i < size - 1) { array_temp[i] = array[i]; }
+			else { array_temp[i] = element; };
 		}
-		else {
-			capacity = size + reserve_node;
 
-			int* array_temp = new int[capacity]{};
+		array = array_temp;
 
-			for (int i = 0; i < size && capacity > size; ++i) {
-				if (i < size - 1) { array_temp[i] = array[i]; }
-				else { array_temp[i] = element; };
-			}
+		array_temp = nullptr;
+		delete[] array_temp;
 
-			array = array_temp;
-
-			array_temp = nullptr;
-			delete[] array_temp;
-
-		}
+	}
 }
 
 int& smart_array::get_element(int index) {
