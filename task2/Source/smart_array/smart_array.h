@@ -22,9 +22,4 @@ private:
 	int size;
 	int capacity;
 	int reserve_node = 2;
-
-	unsigned int counter_added_elements;
-
-	bool is_zero_size();
-
 };

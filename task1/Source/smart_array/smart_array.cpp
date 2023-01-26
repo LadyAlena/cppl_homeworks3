@@ -9,12 +9,10 @@ smart_array::smart_array(const int& size_) {
 
 	if (size_ < 0) throw bad_array_length();
 
-	this->size = size_;
-	capacity = size + reserve_node;
+	size = 0;
+	capacity = size_ + reserve_node;
 
 	array = new int[capacity]{};
-
-	counter_added_elements = 0;
 }
 
 smart_array::~smart_array() {
@@ -29,10 +27,6 @@ void smart_array::print() {
 
 void smart_array::add_element(const int& element) {
 
-	if (is_zero_size() && counter_added_elements < size) {
-		array[counter_added_elements] = element;
-	}
-	else {
 		size++;
 
 		if (capacity >= size) {
@@ -54,9 +48,6 @@ void smart_array::add_element(const int& element) {
 			delete[] array_temp;
 
 		}
-	}
-
-	counter_added_elements++;
 }
 
 int& smart_array::get_element(int index) {
@@ -71,5 +62,3 @@ int& smart_array::get_element(int index) {
 int smart_array::get_size() { return size; }
 
 int smart_array::get_capacity() { return capacity; }
-
-bool smart_array::is_zero_size() { return bool(size); }

@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
 
 	try {
 
-		smart_array arr(4);
+		smart_array arr(0);
 
 		arr.add_element(1);
 		arr.add_element(4);

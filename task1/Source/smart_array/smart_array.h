@@ -4,8 +4,6 @@ class smart_array
 {
 public:
 	smart_array(const int& size_);
-
-
 	~smart_array();
 
 	void print();
@@ -23,9 +21,4 @@ private:
 	int size;
 	int capacity;
 	int reserve_node = 2;
-
-	unsigned int counter_added_elements;
-
-	bool is_zero_size();
-
 };
